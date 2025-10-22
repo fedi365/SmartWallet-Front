@@ -1,4 +1,5 @@
 import { LinearGradient } from 'expo-linear-gradient';
+import { ViewStyle, TextStyle } from 'react-native';
 
 export const COLORS = {
     primary: {
@@ -71,10 +72,10 @@ export const TYPOGRAPHY = {
         huge: 48,
     },
     weights: {
-        regular: '400',
-        medium: '500',
-        semibold: '600',
-        bold: '700',
+        regular: '400' as const,
+        medium: '500' as const,
+        semibold: '600' as const,
+        bold: '700' as const,
     },
     lineHeights: {
         tight: 1.2,
@@ -126,8 +127,8 @@ export const SHADOWS = {
 export const COMMON_STYLES = {
     container: {
         flex: 1,
-        backgroundColor: COLORS.background.primary, // ✅ pas un tableau
-    },
+        backgroundColor: COLORS.background.primary,
+    } as ViewStyle,
 
     glassCard: {
         backgroundColor: COLORS.error.bg,
@@ -135,15 +136,15 @@ export const COMMON_STYLES = {
         borderWidth: 1,
         borderColor: COLORS.error.main,
         margin: 8,
-        marginTop:16,
-        padding:40
-    },
+        marginTop: 16,
+        padding: 40,
+    } as ViewStyle,
 
     gradientCard: {
         borderRadius: BORDER_RADIUS.xxl,
         padding: SPACING.lg,
         overflow: 'hidden',
-    },
+    } as ViewStyle,
 
     primaryButton: {
         backgroundColor: COLORS.primary.main,
@@ -151,7 +152,7 @@ export const COMMON_STYLES = {
         padding: SPACING.md,
         alignItems: 'center',
         justifyContent: 'center',
-    },
+    } as ViewStyle,
 
     secondaryButton: {
         backgroundColor: COLORS.card.overlay,
@@ -159,76 +160,43 @@ export const COMMON_STYLES = {
         padding: SPACING.md,
         alignItems: 'center',
         justifyContent: 'center',
-    },
+    } as ViewStyle,
 
     titleText: {
         fontSize: TYPOGRAPHY.sizes.xxl,
-        fontWeight: '700', // ✅ compatible avec TextStyle
+        fontWeight: '700',
         color: COLORS.text.primary,
         marginHorizontal: 8,
-    },
-    cardText:{
-        fontSize: TYPOGRAPHY.sizes.xl,
-        fontWeight: '700', // ✅ compatible avec TextStyle
-        color: COLORS.text.primary,
-        marginHorizontal: 8,
-        headerRow: {
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-        },
-        title: {
-            color: '#fff',
-            fontSize: 14,
-            fontWeight: '600',
-        },
-        amount: {
-            color: '#fff',
-            fontSize: 32,
-            fontWeight: '700',
-            marginVertical: 10,
-        },
-        statusContainer: {
-            flexDirection: 'row',
-            alignItems: 'center',
-            backgroundColor: 'rgba(255,255,255,0.1)',
-            borderRadius: 20,
-            paddingHorizontal: 10,
-            paddingVertical: 4,
-            alignSelf: 'flex-start',
-        },
-        statusDot: {
-            width: 8,
-            height: 8,
-            borderRadius: 4,
-            backgroundColor: '#22C55E',
-            marginRight: 6,
-        },
-        statusText: {
-            color: '#fff',
-            fontSize: 12,
-        },
+    } as TextStyle,
 
-    },
+    cardText: {
+        fontSize: TYPOGRAPHY.sizes.xl,
+        fontWeight: '700',
+        color: COLORS.text.primary,
+        marginHorizontal: 8,
+    } as TextStyle,
 
     headerRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'start',
+        alignItems: 'flex-start',
         marginTop: -30,
-        marginLeft:-25
-    },
+        marginLeft: -25,
+    } as ViewStyle,
+
     title: {
         color: '#fff',
         fontSize: 14,
         fontWeight: '400',
-    },
+    } as TextStyle,
+
     amount: {
         color: '#fff',
         fontSize: 32,
         fontWeight: '700',
         marginVertical: 10,
-    },
+    } as TextStyle,
+
     statusContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -236,56 +204,55 @@ export const COMMON_STYLES = {
         borderRadius: 20,
         paddingHorizontal: 10,
         marginLeft: -20,
-        marginEnd:-20,
+        marginEnd: -20,
         paddingVertical: 1,
         alignSelf: 'flex-start',
-    },
+    } as ViewStyle,
+
     statusDot: {
         width: 8,
         height: 8,
         borderRadius: 4,
         backgroundColor: '#22C55E',
         marginRight: 6,
-    },
+    } as ViewStyle,
+
     statusText: {
         color: '#fff',
         fontSize: 12,
-    },
-
-
-    /////////////////////////////////////////////////////////////////
+    } as TextStyle,
 
     subtitleText: {
         fontSize: TYPOGRAPHY.sizes.md,
         fontWeight: '500',
         color: COLORS.text.secondary,
         margin: 8,
-    },
+    } as TextStyle,
 
     bodyText: {
         fontSize: TYPOGRAPHY.sizes.base,
-        fontWeight: '400', // ✅
+        fontWeight: '400',
         color: COLORS.text.primary,
-    },
+    } as TextStyle,
 
     captionText: {
         fontSize: TYPOGRAPHY.sizes.sm,
-        fontWeight: '400', // ✅
+        fontWeight: '400',
         color: COLORS.text.secondary,
-    },
+    } as TextStyle,
 
     badge: {
         paddingHorizontal: SPACING.md,
         paddingVertical: SPACING.sm,
         borderRadius: BORDER_RADIUS.full,
         backgroundColor: COLORS.card.overlay,
-    },
+    } as ViewStyle,
 
     divider: {
         height: 1,
         backgroundColor: COLORS.card.border,
         marginVertical: SPACING.md,
-    },
+    } as ViewStyle,
 
     input: {
         backgroundColor: COLORS.card.background,
@@ -295,7 +262,7 @@ export const COMMON_STYLES = {
         padding: SPACING.md,
         fontSize: TYPOGRAPHY.sizes.base,
         color: COLORS.text.primary,
-    },
+    } as TextStyle,
 
     iconContainer: {
         width: 40,
@@ -303,10 +270,10 @@ export const COMMON_STYLES = {
         borderRadius: BORDER_RADIUS.full,
         alignItems: 'center',
         justifyContent: 'center',
-    },
+    } as ViewStyle,
 };
 
-export const Small_Card={
+export const Small_Card = {
     smallCard: {
         flex: 1,
         maxWidth: 150,
@@ -317,34 +284,39 @@ export const Small_Card={
         borderWidth: 1,
         borderColor: 'rgb(225,64,224)',
         backgroundColor: 'rgba(219,6,62,0.05)',
-    },
+    } as ViewStyle,
+
     smallCardHeader: {
         flexDirection: 'row',
         alignItems: 'center',
         gap: 6,
-    },
+    } as ViewStyle,
+
     smallCardTitle: {
         color: '#ccc',
         fontSize: 13,
-        fontWeight: '1000',
-    },
+        fontWeight: '900', // Correction: '1000' n'existe pas, max = '900'
+    } as TextStyle,
+
     smallCardAmount: {
         color: '#fff',
         fontSize: 22,
         fontWeight: '700',
         marginTop: 10,
-    },
+    } as TextStyle,
+
     smallCardSub: {
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 4,
-    },
+    } as ViewStyle,
+
     smallCardSubText: {
         fontSize: 12,
         color: '#aaa',
         marginLeft: 4,
-    },
-}
+    } as TextStyle,
+};
 
 export const GRADIENTS = {
     primary: ['#9333EA', '#EC4899', '#F97316'],
@@ -368,12 +340,12 @@ export const ANIMATION = {
     },
 };
 
-export const getResponsiveSize = (baseSize, screenWidth) => {
+export const getResponsiveSize = (baseSize: number, screenWidth: number): number => {
     const scale = screenWidth / 375;
     return Math.round(baseSize * scale);
 };
 
-export const withOpacity = (color, opacity) => {
+export const withOpacity = (color: string, opacity: number): string => {
     return `${color}${Math.round(opacity * 255).toString(16).padStart(2, '0')}`;
 };
 
@@ -386,6 +358,7 @@ export default {
     COMMON_STYLES,
     GRADIENTS,
     ANIMATION,
+    Small_Card,
     getResponsiveSize,
     withOpacity,
 };
